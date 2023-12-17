@@ -1,0 +1,23 @@
+# Specify the build specification syntax for build spec
+version: 0.2
+
+phases:
+  install:
+    commands:
+      runtime-versions:
+        nodejs: 20.x
+
+  pre_build:
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
+
+  build:
+    commands:
+      - echo "Building React app..."
+      - npm run build
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'build'
