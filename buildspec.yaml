@@ -18,7 +18,8 @@ phases:
 
   post_build:
     commands:
-      - echo "Uploading to S3..."
+      - echo "Clean up S3 files"
+      - aws s3 rm s3://chitamnguyen.net --recursive
 
 artifacts:
   files:
