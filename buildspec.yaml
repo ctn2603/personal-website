@@ -16,6 +16,11 @@ phases:
       - echo "Building React app..."
       - npm run build
 
+  post_build:
+    commands:
+      - echo "Uploading to S3..."
+      - aws s3 cp --recursive ./build s3://chitamnguyen.net/
+
 artifacts:
   files:
     - '**/*'
