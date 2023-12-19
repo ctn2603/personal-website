@@ -20,7 +20,6 @@ phases:
     commands:
       - echo "Clean up S3 files"
       - aws s3 rm s3://chitamnguyen.net --recursive
-      - aws s3 cp --recursive ./build s3://chitamnguyen.net/
 
 artifacts:
   files:
