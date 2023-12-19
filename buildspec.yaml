@@ -2,9 +2,9 @@
 version: 0.2
 
 phases:
-  install:
-      runtime-versions:
-        nodejs: 20.x
+  # install:
+  #     runtime-versions:
+  #       nodejs: 20.x
 
   pre_build:
     commands:
