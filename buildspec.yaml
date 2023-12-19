@@ -9,18 +9,18 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      # - npm install
 
   build:
     commands:
       - echo "Building React app..."
-      - npm run build
+      # - npm run build
 
   post_build:
     commands:
       - echo "Clean up S3 files"
       - aws s3 rm s3://chitamnguyen.net --recursive
-      - aws s3 cp --recursive ./build s3://chitamnguyen.net/
+      # - aws s3 cp --recursive ./build s3://chitamnguyen.net/
 
 artifacts:
   files:
