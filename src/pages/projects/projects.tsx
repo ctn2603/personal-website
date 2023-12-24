@@ -1,12 +1,12 @@
 import Slide from "./../../components/slide/slide";
 
-interface HomeProps {}
+interface ProjectsProps {}
 
-const Home = (props: HomeProps) => {
+const Projects = (props: ProjectsProps) => {
   return (
     <section
-      id="home"
-      className=" flex h-[800px] w-full items-center justify-center bg-pink-500"
+      id="projects"
+      className=" flex h-[800px] w-full items-center justify-center bg-purple-500"
     >
       <Slide>
         <h1>Section One</h1>
@@ -19,4 +19,4 @@ const Home = (props: HomeProps) => {
   );
 };
 
-export default Home;
+export default Projects;
