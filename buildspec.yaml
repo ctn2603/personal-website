@@ -5,16 +5,18 @@ phases:
   install:
       runtime-versions:
         nodejs: 20.x
+      commands:
+      - npm install -g yarn
 
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      - yarn install
 
   build:
     commands:
       - echo "Building React app..."
-      - npm run build
+      - yarn run build
 
   post_build:
     commands:
