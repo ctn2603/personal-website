@@ -1,9 +1,0 @@
-.navbar {
-    background-color: transparent;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        background-color: #f8f9fa;
-    }
-}
