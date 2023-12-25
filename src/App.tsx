@@ -8,6 +8,8 @@ import Resume from "./pages/resume/resume";
 import Skills from "./pages/skills/skills";
 import Timeline from "./pages/timeline/timeline";
 
+import "./App.css";
+
 export default function App() {
   return (
     <BrowserRouter>

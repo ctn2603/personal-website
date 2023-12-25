@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Path = (props: any) => {
   return (
     <motion.path
-      className="stroke-slate-900 stroke-[3]"
+      className="stroke-white stroke-[3]"
       strokeLinecap={"round"}
       {...props}
     />
