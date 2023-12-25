@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import Computer from "./../../assets/animations/computer.json";
+import Slide from "./../../components/slide/slide";
 
 interface HomeProps {}
 
