@@ -9,16 +9,18 @@ import Skills from "./pages/skills/skills";
 import Timeline from "./pages/timeline/timeline";
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Resume />
-      <Timeline />
-      <Contact />
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div className="relative z-0 bg-white">
+                <NavBar />
+                <Home />
+                <About />
+                <Skills />
+                <Projects />
+                <Resume />
+                <Timeline />
+                <Contact />
+            </div>
+        </BrowserRouter>
+    );
 }

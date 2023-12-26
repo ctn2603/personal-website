@@ -3,11 +3,15 @@ import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/icons/logo.png";
 import { links } from "../../constants/links";
 import Path from "../path/path";
+import { useEffect, useState } from "react";
 
 interface NavBarProps {}
 
 const NavBar = (props: NavBarProps) => {
     const [open, toggleOpen] = useCycle<boolean>(false, true);
+    const [scrolled, setScrolled] = useState(false);
+    const [active, setActive] = useState("home");
+
     const menuVariants = {
         opened: {
             top: 0,
@@ -37,9 +41,29 @@ const NavBar = (props: NavBarProps) => {
         },
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 100) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <div className="sticky top-0 z-30 font-rubik">
-            <div className="relative flex h-[80px] items-center justify-between gap-5 p-[1rem] px-0">
+        <div
+            className={`fixed top-0 z-20 flex w-full items-center justify-center font-rubik ${
+                scrolled ? "bg-black" : "bg-transparent"
+            }`}
+        >
+            {/* <div className={`sticky top-0 z-30 bg-white font-rubik`}> */}
+            <div className="relative flex h-[60px] items-center justify-around gap-5 p-[1rem] px-0">
                 <div className="ml-5 flex h-[40px] justify-center pl-5">
                     <img src={logo} alt="logo" />
                 </div>
@@ -57,7 +81,12 @@ const NavBar = (props: NavBarProps) => {
                                         smooth
                                         to={link.link}
                                         key={link.id}
-                                        className="mx-3 my-1.5 uppercase text-white"
+                                        className={`mx-3 my-1.5 uppercase ${
+                                            active === link.name
+                                                ? "text-[#EAA79C]"
+                                                : "text-white"
+                                        }`}
+                                        onClick={() => setActive(link.name)}
                                     >
                                         {link.name}
                                     </HashLink>
@@ -120,7 +149,17 @@ const NavBar = (props: NavBarProps) => {
                                 whileTap={{ scale: 0.95 }}
                                 className="mx-3 block w-full rounded-md p-1 text-center uppercase hover:bg-blue-500"
                             >
-                                <HashLink smooth to={link.link} key={link.id}>
+                                <HashLink
+                                    smooth
+                                    to={link.link}
+                                    key={link.id}
+                                    className={`mx-3 my-1.5 uppercase ${
+                                        active === link.name
+                                            ? "text-[#EAA79C]"
+                                            : "text-white"
+                                    }`}
+                                    onClick={() => setActive(link.name)}
+                                >
                                     {link.name}
                                 </HashLink>
                             </motion.li>
