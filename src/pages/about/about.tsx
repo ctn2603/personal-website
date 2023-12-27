@@ -1,5 +1,3 @@
-import Lottie from "lottie-react";
-import Computer from "./../../assets/animations/computer.json";
 import profile from "../../assets/images/profile.png";
 import { motion } from "framer-motion";
 
@@ -14,8 +12,8 @@ const About = (props: AboutProps) => {
             <div className="mb-10 mt-24 flex h-[100px] items-center text-5xl">
                 About me
             </div>
-            <div className="flex w-3/4 gap-10">
-                <div className="flex w-[250px] items-center justify-center">
+            <div className="flex w-full flex-col items-center justify-center gap-10 md:w-3/4 md:flex-row">
+                <div className="flex w-[150px] items-center justify-center sm:w-[250px]">
                     <img src={profile} alt="logo" />
                 </div>
                 <motion.div

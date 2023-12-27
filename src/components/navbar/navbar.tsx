@@ -1,9 +1,14 @@
 import { motion, useCycle } from "framer-motion";
+import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/icons/logo.png";
 import { links } from "../../constants/links";
+import {
+    menuItemVariants,
+    menuItemsVariants,
+    menuVariants,
+} from "../../constants/variants";
 import Path from "../path/path";
-import { useEffect, useState } from "react";
 
 interface NavBarProps {}
 
@@ -11,35 +16,6 @@ const NavBar = (props: NavBarProps) => {
     const [open, toggleOpen] = useCycle<boolean>(false, true);
     const [scrolled, setScrolled] = useState(false);
     const [active, setActive] = useState("home");
-
-    const menuVariants = {
-        opened: {
-            top: 0,
-        },
-        closed: {
-            top: "-60vh",
-        },
-    };
-
-    const menuItemsVariants = {
-        open: {
-            transition: { staggerChildren: 0.07, delayChildren: 0 },
-        },
-        closed: {
-            transition: { staggerChildren: 0.05, staggerDirection: -1 },
-        },
-    };
-
-    const menuItemVariants = {
-        open: {
-            y: 0,
-            opacity: 1,
-        },
-        closed: {
-            y: 50,
-            opacity: 0,
-        },
-    };
 
     useEffect(() => {
         const handleScroll = () => {

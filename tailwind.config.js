@@ -6,6 +6,7 @@ module.exports = {
             backgroundImage: {
                 landing: "url('/src/assets/images/landing.jpg')",
                 about: "url('/src/assets/images/about.jpg')",
+                skills: "url('/src/assets/images/skills.jpg')",
             },
             fontFamily: {
                 rubik: ["Rubik", "cursive"],
