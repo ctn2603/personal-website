@@ -38,7 +38,6 @@ const NavBar = (props: NavBarProps) => {
                 scrolled ? "bg-black" : "bg-transparent"
             }`}
         >
-            {/* <div className={`sticky top-0 z-30 bg-white font-rubik`}> */}
             <div className="relative flex h-[60px] items-center justify-around gap-5 p-[1rem] px-0">
                 <div className="ml-5 flex h-[40px] justify-center pl-5">
                     <img src={logo} alt="logo" />
@@ -69,6 +68,13 @@ const NavBar = (props: NavBarProps) => {
                                 </motion.li>
                             );
                         })}
+                        <a
+                            className="mx-3 cursor-pointer text-white"
+                            href={"/[Chi Tam Nguyen] Resume.pdf"}
+                            download={"[Chi Tam Nguyen] Resume.pdf"}
+                        >
+                            RESUME
+                        </a>
                     </ul>
                 </div>
 

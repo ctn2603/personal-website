@@ -4,7 +4,6 @@ import About from "./pages/about/about";
 import Contact from "./pages/contact/contact";
 import Home from "./pages/home/home";
 import Projects from "./pages/projects/projects";
-import Resume from "./pages/resume/resume";
 import Skills from "./pages/skills/skills";
 import Timeline from "./pages/timeline/timeline";
 
@@ -17,7 +16,6 @@ export default function App() {
                 <About />
                 <Skills />
                 <Projects />
-                <Resume />
                 <Timeline />
                 <Contact />
             </div>
