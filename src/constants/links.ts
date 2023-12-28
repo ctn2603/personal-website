@@ -15,14 +15,14 @@ export const links: { id: string; name: string; link: string }[] = [
         link: "#skills",
     },
     {
-        id: "projects",
-        name: "projects",
-        link: "#projects",
-    },
-    {
         id: "timeline",
         name: "timeline",
         link: "#timeline",
+    },
+    {
+        id: "projects",
+        name: "projects",
+        link: "#projects",
     },
     {
         id: "contact",
