@@ -6,6 +6,7 @@ import Home from "./pages/home/home";
 import Projects from "./pages/projects/projects";
 import Skills from "./pages/skills/skills";
 import Timeline from "./pages/timeline/timeline";
+import Footer from "./components/footer/footer";
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
                 <Projects />
                 <Timeline />
                 <Contact />
+                <Footer />
             </div>
         </BrowserRouter>
     );

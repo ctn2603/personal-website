@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { emailJs } from "../../constants/emailjs";
 
 interface ContactProps {
@@ -15,7 +15,9 @@ const Contact = (props: ContactProps) => {
         message: "",
     });
 
-    const handleChange = (event: any) => {
+    const handleChange = (
+        event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    ) => {
         const { target } = event;
         const { name, value } = target;
 

@@ -34,7 +34,7 @@ export const workTimelines: WorkTimeline[] = [
 export const educationTimelines: EducationTimeline[] = [
     {
         id: 'uc berkeley',
-        major: 'Computer Science',
+        major: 'Computer Science (BA)',
         school: 'University of California - Berkeley',
         from: '08/2022',
         to: 'Present',
@@ -47,7 +47,7 @@ export const educationTimelines: EducationTimeline[] = [
     },
     {
         id: 'msjc',
-        major: 'Computer Science',
+        major: 'Computer Science (ADT)',
         school: 'Mt. San Jacinto College',
         from: '08/2020',
         to: '08/2022',
