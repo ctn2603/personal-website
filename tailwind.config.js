@@ -8,6 +8,7 @@ module.exports = {
                 about: "url('/src/assets/images/about.jpg')",
                 skills: "url('/src/assets/images/skills.jpg')",
                 timeline: "url('/src/assets/images/timeline.jpg')",
+                contact: "url('/src/assets/images/contact.jpg')",
             },
             fontFamily: {
                 rubik: ["Rubik", "cursive"],

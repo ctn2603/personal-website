@@ -1,22 +1,125 @@
-import Slide from "./../../components/slide/slide";
+import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { FormEvent, useState } from "react";
+import { emailJs } from "../../constants/emailjs";
 
-interface ContactProps {}
+interface ContactProps {
+    className?: string;
+}
 
 const Contact = (props: ContactProps) => {
-  return (
-    <section
-      id="contact"
-      className=" flex h-[800px] w-full items-center justify-center bg-green-500"
-    >
-      <Slide>
-        <h1>Section One</h1>
-      </Slide>
-      <Slide delay={0.3}>
-        <p>Hey! I am the first section</p>
-        <a href="#section2">Scroll to 2</a>
-      </Slide>
-    </section>
-  );
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+
+    const handleChange = (event: any) => {
+        const { target } = event;
+        const { name, value } = target;
+
+        setForm({
+            ...form,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = (event: FormEvent) => {
+        event.preventDefault();
+
+        emailjs
+            .send(
+                emailJs.serviceId,
+                emailJs.templateId,
+                {
+                    from_name: form.name,
+                    from_email: form.email,
+                    to_name: "Chi Tam Nguyen",
+                    phone: form.phone,
+                    message: form.message,
+                },
+                emailJs.publicKey,
+            )
+            .catch((err) => {
+                console.log("FAILED...", err);
+            });
+    };
+
+    return (
+        <section
+            id="contact"
+            className="bg-contact flex min-h-screen w-full flex-col items-center justify-start bg-cover bg-center bg-no-repeat py-20 font-rubik"
+        >
+            <div className="mb-5 flex h-[100px] items-center text-4xl">
+                Contact
+            </div>
+            <div className="flex w-full flex-col items-center justify-center gap-10 md:w-3/4 md:flex-row">
+                <motion.div
+                    className="flex w-3/4 flex-col items-start justify-center rounded-xl bg-white p-14 sm:w-3/5"
+                    variants={{
+                        off: {
+                            y: 20,
+                            opacity: 0,
+                        },
+                        on: {
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                                duration: 1,
+                            },
+                        },
+                    }}
+                    initial="off"
+                    whileInView="on"
+                    viewport={{ once: true }}
+                >
+                    <form
+                        className="flex w-full flex-col items-center space-y-4"
+                        onSubmit={handleSubmit}
+                    >
+                        <input
+                            type="text"
+                            name="name"
+                            className="text-md w-full rounded-md border border-gray-400 bg-white p-3"
+                            placeholder="Your name (*)"
+                            required
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            className="text-md w-full rounded-md border border-gray-400 bg-white p-3"
+                            placeholder="Your email address (*)"
+                            required
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="tel"
+                            name="phone"
+                            className="text-md w-full rounded-md border border-gray-400 bg-white p-3"
+                            placeholder="Your phone number"
+                            onChange={handleChange}
+                        />
+                        <textarea
+                            name="message"
+                            className="text-md w-full rounded-md border border-gray-400 bg-white p-3"
+                            placeholder="Your message to me (*)"
+                            rows={5}
+                            required
+                            onChange={handleChange}
+                        />
+                        <button
+                            type="submit"
+                            className="shadow-primary rounded-xl border border-gray-300 bg-[#345D95] px-20 py-3 font-bold shadow-md outline-none hover:bg-[#2b558f] active:bg-[#16488c]"
+                        >
+                            <p className="text-white">{"Send"}</p>
+                        </button>
+                    </form>
+                </motion.div>
+            </div>
+        </section>
+    );
 };
 
 export default Contact;
