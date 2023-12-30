@@ -7,9 +7,9 @@ const About = (props: AboutProps) => {
     return (
         <section
             id="about"
-            className="bg-about flex min-h-screen w-full flex-col items-center justify-start bg-cover bg-center bg-no-repeat font-rubik"
+            className="bg-about flex min-h-screen w-full flex-col items-center justify-start bg-cover bg-center bg-no-repeat font-rubik py-20"
         >
-            <div className="mb-10 mt-24 flex h-[100px] items-center text-5xl">
+            <div className="mb-10 flex h-[100px] items-center text-5xl">
                 About me
             </div>
             <div className="flex w-full flex-col items-center justify-center gap-10 md:w-3/4 md:flex-row">

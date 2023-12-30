@@ -4,9 +4,9 @@ interface FooterProps {}
 
 const Footer = (props: FooterProps) => {
     return (
-        <div className="item flex h-32 items-center justify-around gap-10 bg-black font-rubik">
-            <div>
-                <p className=" text-white">Copyright © Chi Tam Nguyen 2023</p>
+        <div className="item flex flex-col items-center justify-evenly bg-black p-5 font-rubik sm:flex-row">
+            <div className="p-4">
+                <p className=" text-white">Copyright © 2023 Chi Tam Nguyen </p>
             </div>
             <div>
                 {
@@ -19,7 +19,7 @@ const Footer = (props: FooterProps) => {
                                             <img
                                                 src={contact.icon}
                                                 alt="platform"
-                                                className="h-8 w-8"
+                                                className="h-6 w-6"
                                             />
                                         </a>
                                     </div>
@@ -28,6 +28,60 @@ const Footer = (props: FooterProps) => {
                         })}
                     </ul>
                 }
+            </div>
+            <div className="flex flex-col items-center p-4 md:items-center">
+                <p className="text-sm text-white">
+                    Designed by{" "}
+                    <a
+                        href="https://www.freepik.com"
+                        className="text-white hover:text-[#E6A49A]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Freepik
+                    </a>
+                </p>
+                <p className="text-sm text-white">
+                    Icon made by{" "}
+                    <a
+                        href="https://www.flaticon.com/authors/freepik"
+                        className="text-white hover:text-[#E6A49A]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Freepik
+                    </a>{" "}
+                    from{" "}
+                    <a
+                        href="https://www.flaticon.com"
+                        className="text-white hover:text-[#E6A49A]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        www.flaticon.com
+                    </a>{" "}
+                </p>
+
+                <p className="text-sm text-white">
+                    Animation made by{" "}
+                    <a
+                        href="https://lottiefiles.com/Faiyaz_1"
+                        className="text-white hover:text-[#E6A49A]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Faiyaz
+                    </a>{" "}
+                    from{" "}
+                    <a
+                        href="https://www.flaticon.com"
+                        className="text-white hover:text-[#E6A49A]"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        www.lottiefiles.com
+                    </a>{" "}
+                </p>
             </div>
         </div>
     );
