@@ -15,7 +15,11 @@ const Footer = (props: FooterProps) => {
                             return (
                                 <li key={contact.id}>
                                     <div className="cursor-pointer rounded-full bg-white p-2 hover:bg-gray-200">
-                                        <a href={contact.link} target="_blank">
+                                        <a
+                                            href={contact.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <img
                                                 src={contact.icon}
                                                 alt="platform"

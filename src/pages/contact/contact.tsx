@@ -49,10 +49,7 @@ const Contact = (props: ContactProps) => {
     };
 
     return (
-        <section
-            id="contact"
-            className="bg-contact flex min-h-screen w-full flex-col items-center justify-start bg-cover bg-center bg-no-repeat py-20 font-rubik"
-        >
+        <>
             <div className="mb-5 flex h-[100px] items-center text-4xl">
                 Contact
             </div>
@@ -120,7 +117,7 @@ const Contact = (props: ContactProps) => {
                     </form>
                 </motion.div>
             </div>
-        </section>
+        </>
     );
 };
 

@@ -11,10 +11,7 @@ interface TimelineProps {}
 
 const Timeline = (props: TimelineProps) => {
     return (
-        <section
-            id="timeline"
-            className="bg-timeline flex min-h-screen w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-[80px] font-rubik"
-        >
+        <>
             <div className="flex h-[100px] items-center text-4xl text-white">
                 Work Experience
             </div>
@@ -137,7 +134,7 @@ const Timeline = (props: TimelineProps) => {
                     );
                 })}
             </VerticalTimeline>
-        </section>
+        </>
     );
 };
 

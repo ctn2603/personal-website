@@ -5,10 +5,7 @@ interface SkillProps {}
 
 const Skills = (props: SkillProps) => {
     return (
-        <section
-            id="skills"
-            className="bg-skills flex min-h-screen w-full flex-col items-center justify-center bg-red-300 bg-cover bg-center bg-no-repeat p-[80px] font-rubik"
-        >
+        <>
             <div className="flex h-[100px] items-center text-5xl text-white">
                 Skills
             </div>
@@ -23,7 +20,7 @@ const Skills = (props: SkillProps) => {
                     />
                 );
             })}
-        </section>
+        </>
     );
 };
 

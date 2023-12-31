@@ -2,20 +2,21 @@ import { motion, useCycle } from "framer-motion";
 import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/icons/logo.png";
-import { links } from "../../constants/links";
 import {
     menuItemVariants,
     menuItemsVariants,
     menuVariants,
 } from "../../constants/variants";
 import Path from "../path/path";
+import { sections } from "../../constants/sections";
 
-interface NavBarProps {}
+interface NavBarProps {
+    activeSection: string;
+}
 
 const NavBar = (props: NavBarProps) => {
     const [open, toggleOpen] = useCycle<boolean>(false, true);
     const [scrolled, setScrolled] = useState(false);
-    const [active, setActive] = useState("home");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,25 +46,24 @@ const NavBar = (props: NavBarProps) => {
 
                 <div className="mr-10 hidden py-1 md:flex">
                     <ul className="justify-between md:flex">
-                        {links.map((link) => {
+                        {sections.map((section) => {
                             return (
                                 <motion.li
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    key={link.id}
+                                    key={section.id}
                                 >
                                     <HashLink
                                         smooth
-                                        to={link.link}
-                                        key={link.id}
+                                        to={section.link}
+                                        key={section.id}
                                         className={`mx-3 my-1.5 uppercase ${
-                                            active === link.name
+                                            props.activeSection === section.name
                                                 ? "text-[#EAA79C]"
                                                 : "text-white"
                                         }`}
-                                        onClick={() => setActive(link.name)}
                                     >
-                                        {link.name}
+                                        {section.name}
                                     </HashLink>
                                 </motion.li>
                             );
@@ -122,10 +122,10 @@ const NavBar = (props: NavBarProps) => {
                     animate={open ? "open" : "closed"}
                     className="mt-[50px] flex w-full list-none flex-col items-center justify-center gap-3 bg-orange-400"
                 >
-                    {links.map((link) => {
+                    {sections.map((section) => {
                         return (
                             <motion.li
-                                key={link.id}
+                                key={section.id}
                                 variants={menuItemVariants}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
@@ -133,16 +133,15 @@ const NavBar = (props: NavBarProps) => {
                             >
                                 <HashLink
                                     smooth
-                                    to={link.link}
-                                    key={link.id}
+                                    to={section.link}
+                                    key={section.id}
                                     className={`mx-3 my-1.5 uppercase ${
-                                        active === link.name
+                                        props.activeSection === section.name
                                             ? "text-[#EAA79C]"
                                             : "text-white"
                                     }`}
-                                    onClick={() => setActive(link.name)}
                                 >
-                                    {link.name}
+                                    {section.name}
                                 </HashLink>
                             </motion.li>
                         );

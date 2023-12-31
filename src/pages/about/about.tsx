@@ -5,10 +5,7 @@ interface AboutProps {}
 
 const About = (props: AboutProps) => {
     return (
-        <section
-            id="about"
-            className="bg-about flex min-h-screen w-full flex-col items-center justify-start bg-cover bg-center bg-no-repeat font-rubik py-20"
-        >
+        <>
             <div className="mb-10 flex h-[100px] items-center text-5xl">
                 About me
             </div>
@@ -75,7 +72,7 @@ const About = (props: AboutProps) => {
                     </p>
                 </motion.div>
             </div>
-        </section>
+        </>
     );
 };
 

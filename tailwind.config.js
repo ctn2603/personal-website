@@ -4,9 +4,10 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                landing: "url('/src/assets/images/landing.jpg')",
+                home: "url('/src/assets/images/landing.jpg')",
                 about: "url('/src/assets/images/about.jpg')",
                 skills: "url('/src/assets/images/skills.jpg')",
+                projects: "url('/src/assets/images/skills.jpg')",
                 timeline: "url('/src/assets/images/timeline.jpg')",
                 contact: "url('/src/assets/images/contact.jpg')",
             },
