@@ -7,7 +7,7 @@ const Home = (props: HomeProps) => {
     return (
         <>
             <div className="mx-auto flex h-[100vh] w-full flex-row flex-wrap pt-[80px] sm:flex-row">
-                <div className="flex w-full flex-col items-start justify-center  px-10 text-white sm:pl-40 md:w-1/2 md:pl-20">
+                <div className="flex w-full flex-col items-start justify-center px-10 text-white sm:pl-40 md:w-1/2 md:pl-20">
                     <p className="font-poppins text-6xl sm:text-7xl md:text-8xl xl:text-9xl">
                         HELLO!
                     </p>

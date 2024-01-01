@@ -37,3 +37,5 @@ export const domainVariants = {
         opacity: 1,
     },
 };
+
+export const projectVariants = domainVariants;

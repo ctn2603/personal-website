@@ -7,7 +7,7 @@ module.exports = {
                 home: "url('/src/assets/images/landing.jpg')",
                 about: "url('/src/assets/images/about.jpg')",
                 skills: "url('/src/assets/images/skills.jpg')",
-                projects: "url('/src/assets/images/skills.jpg')",
+                projects: "url('/src/assets/images/projects.jpg')",
                 timeline: "url('/src/assets/images/timeline.jpg')",
                 contact: "url('/src/assets/images/contact.jpg')",
             },
@@ -19,6 +19,10 @@ module.exports = {
                 rubik: {
                     thin: "300",
                     normal: "700",
+                },
+                poppins: {
+                    normal: "400",
+                    large: "700",
                 },
             },
         },

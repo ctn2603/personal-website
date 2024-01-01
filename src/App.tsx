@@ -37,7 +37,11 @@ export default function App() {
                 <NavBar activeSection={activeSection} />
                 {sections.map((section) => {
                     return (
-                        <Section key={section.id} id={section.id}>
+                        <Section
+                            key={section.id}
+                            id={section.id}
+                            background={section.background}
+                        >
                             {section.child}
                         </Section>
                     );

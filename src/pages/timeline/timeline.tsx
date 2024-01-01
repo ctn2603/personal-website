@@ -11,8 +11,8 @@ interface TimelineProps {}
 
 const Timeline = (props: TimelineProps) => {
     return (
-        <>
-            <div className="flex h-[100px] items-center text-4xl text-white">
+        <div className="pl-3 pr-6">
+            <div className="flex h-[100px] items-center justify-center text-4xl text-white">
                 Work Experience
             </div>
 
@@ -74,7 +74,7 @@ const Timeline = (props: TimelineProps) => {
                 })}
             </VerticalTimeline>
 
-            <div className="mt-[100px] flex h-[100px] items-center text-4xl text-white">
+            <div className="justify-center items-center mt-[100px] flex h-[100px] text-4xl text-white">
                 Education
             </div>
             <VerticalTimeline>
@@ -134,7 +134,7 @@ const Timeline = (props: TimelineProps) => {
                     );
                 })}
             </VerticalTimeline>
-        </>
+        </div>
     );
 };
 

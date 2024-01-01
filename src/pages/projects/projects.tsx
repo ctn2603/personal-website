@@ -1,17 +1,30 @@
-import Slide from "./../../components/slide/slide";
+import { motion } from "framer-motion";
+import ProjectCard from "../../components/project-card/project-card";
+import { projects } from "../../constants/projects";
+import { projectVariants } from "../../constants/variants";
 
 interface ProjectsProps {}
 
 const Projects = (props: ProjectsProps) => {
     return (
         <>
-            <Slide>
-                <h1>Section One</h1>
-            </Slide>
-            <Slide delay={0.3}>
-                <p>Hey! I am the first section</p>
-                <a href="#section2">Scroll to 2</a>
-            </Slide>
+            <div className="flex h-[100px] items-center text-5xl text-black">
+                Projects
+            </div>
+            <motion.div
+                variants={projectVariants}
+                initial="start"
+                whileInView="stop"
+                viewport={{ once: true }}
+                transition={{
+                    staggerChildren: 0.2,
+                }}
+                className="flex w-5/6 flex-col flex-wrap sm:w-3/4 sm:flex-row"
+            >
+                {projects.map((project) => {
+                    return <ProjectCard key={project.id} {...project} />;
+                })}
+            </motion.div>
         </>
     );
 };

@@ -1,6 +1,5 @@
 import LinkedIn from '../assets/icons/linkedin.png';
 import Github from '../assets/icons/github.png';
-import Gmail from '../assets/icons/github.png';
 
 interface Contact {
     id: string;

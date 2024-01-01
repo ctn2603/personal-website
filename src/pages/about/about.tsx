@@ -14,7 +14,7 @@ const About = (props: AboutProps) => {
                     <img src={profile} alt="logo" />
                 </div>
                 <motion.div
-                    className="flex w-2/3 flex-col items-start justify-center gap-2 px-5"
+                    className="flex w-2/3 flex-col items-start justify-center gap-2"
                     variants={{
                         off: {
                             y: 20,

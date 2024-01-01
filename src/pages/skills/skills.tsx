@@ -16,7 +16,7 @@ const Skills = (props: SkillProps) => {
                         key={domain.domainId}
                         domainName={domain.domainName}
                         techs={domain.techs}
-                        className="my-3"
+                        className="my-3 w-5/6 sm:w-3/4"
                     />
                 );
             })}
