@@ -39,12 +39,12 @@ const NavBar = (props: NavBarProps) => {
                 scrolled ? "bg-black" : "bg-transparent"
             }`}
         >
-            <div className="relative flex h-[60px] items-center justify-around gap-5 p-[1rem] px-0">
-                <div className="ml-5 flex h-[40px] justify-center pl-5">
+            <div className="flex h-[60px] w-5/6 items-center justify-between lg:justify-center">
+                <div className="flex h-[35px] justify-center pl-3">
                     <img src={logo} alt="logo" />
                 </div>
 
-                <div className="mr-10 hidden py-1 md:flex">
+                <div className="mr-10 hidden py-1 lg:flex">
                     <ul className="justify-between md:flex">
                         {sections.map((section) => {
                             return (
@@ -81,7 +81,7 @@ const NavBar = (props: NavBarProps) => {
                 <motion.div
                     animate={open ? "open" : "closed"}
                     onClick={() => toggleOpen()}
-                    className="mr-4 flex md:hidden"
+                    className="mr-4 flex lg:hidden"
                 >
                     <button>
                         <svg width="23" height="23" viewBox="0 0 23 23">
