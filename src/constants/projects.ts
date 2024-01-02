@@ -29,7 +29,7 @@ export const projects: Project[] = [
         name: "Posto",
         thumbnail: Skills,
         description: "A full-stack and cross-platform social media app designed for mobile, inspiring discoveries, learning, fostering cultural exchanges, and encouraging meaningful communications among users.",
-        tags: ["Dart", "Flutter", "Typescript", "Firebase", "NodeJS", "ExpressJS", "Restful API", "Android", "iOS"],
+        tags: ["Dart", "Flutter", "Typescript", "Firebase", "Node.js", "ExpressJS", "Restful API", "Android", "iOS"],
         repo: "https://github.com/ctn2603/Posto.git"
     },
     {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
         name: "Posto Manager",
         thumbnail: PostoManager,
         description: "This in-house website serves as a secured portal for managing Posto, a social media app. Core features include user content management, analytics and insights, advertisement campaigns, and administration",
-        tags: ["ReactJS", "MaterialUI", "NodeJS", "ExpressJS", "Firebase", "Restful API"],
+        tags: ["ReactJS", "MaterialUI", "Node.js", "ExpressJS", "Firebase", "Restful API"],
         repo: ""
     },
     {
@@ -45,7 +45,7 @@ export const projects: Project[] = [
         name: "Study Bear",
         thumbnail: StudyBear,
         description: "A website designed to help Berkeley students find study groups at any time. Students can also form study sessions and specify location, time, subject, and other information. Those who look for existing study sessions could find them on the interactive map.",
-        tags: ["ReactJS", "Google Map", "Typescript", "NodeJS", "MongoDB", "Restful API"],
+        tags: ["ReactJS", "Google Map", "Typescript", "Node.js", "MongoDB", "Restful API"],
         repo: "https://github.com/ctn2603/study-bear"
     },
     {

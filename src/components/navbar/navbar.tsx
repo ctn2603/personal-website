@@ -55,7 +55,7 @@ const NavBar = (props: NavBarProps) => {
                     </div>
                 </HashLink>
 
-                <div className="mr-10 hidden py-1 lg:flex">
+                <div className="mx-10 hidden py-1 lg:flex">
                     <ul className="justify-between md:flex">
                         {sections.map((section) => {
                             return (
@@ -84,7 +84,12 @@ const NavBar = (props: NavBarProps) => {
                             href={"/[Chi Tam Nguyen] Resume.pdf"}
                             download={"[Chi Tam Nguyen] Resume.pdf"}
                         >
-                            RESUME
+                            <button
+                                type="submit"
+                                className="shadow-primary ml-10 rounded-xl border border-gray-300 bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f]"
+                            >
+                                RESUME
+                            </button>
                         </a>
                     </ul>
                 </div>
@@ -125,7 +130,7 @@ const NavBar = (props: NavBarProps) => {
                 variants={menuVariants}
                 initial={false}
                 animate={open ? "opened" : "closed"}
-                className="fixed flex h-[50vh] w-full items-center justify-center bg-[#212529] px-10 md:hidden"
+                className="fixed flex h-[50vh] w-full items-center justify-center bg-[#212529] px-10 lg:hidden"
             >
                 <motion.ul
                     variants={menuItemsVariants}
@@ -163,7 +168,12 @@ const NavBar = (props: NavBarProps) => {
                         href={"/[Chi Tam Nguyen] Resume.pdf"}
                         download={"[Chi Tam Nguyen] Resume.pdf"}
                     >
-                        RESUME
+                        <button
+                            type="submit"
+                            className="shadow-primary ml-0 rounded-xl border border-gray-300 bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f] lg:ml-10"
+                        >
+                            RESUME
+                        </button>
                     </a>
                 </motion.ul>
             </motion.nav>

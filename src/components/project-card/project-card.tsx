@@ -13,7 +13,7 @@ const ProjectCard = (props: ProjectCardProps) => {
     return (
         <motion.div
             variants={projectVariants}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             className="border-1 w-full flex-none border-gray-300 p-4 md:w-1/2 lg:w-1/3"
         >
             <div className="rounded-xl bg-gradient-to-t from-[#212130] to-[#39304A] p-3">
@@ -21,7 +21,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                     <img
                         src={props.thumbnail}
                         alt="thumbnail"
-                        className="h-full w-full rounded-lg object-cover"
+                        className="h-full w-full rounded-lg object-fill"
                     />
                 </div>
                 <div>
