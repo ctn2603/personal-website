@@ -1,76 +1,98 @@
 import { motion, useCycle } from "framer-motion";
+import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../../assets/icons/logo.png";
-import { links } from "../../constants/links";
+import {
+    menuItemVariants,
+    menuItemsVariants,
+    menuVariants,
+} from "../../constants/variants";
 import Path from "../path/path";
+import { sections } from "../../constants/sections";
 
-interface NavBarProps {}
+interface NavBarProps {
+    activeSection: string;
+}
 
 const NavBar = (props: NavBarProps) => {
     const [open, toggleOpen] = useCycle<boolean>(false, true);
-    const menuVariants = {
-        opened: {
-            top: 0,
-        },
-        closed: {
-            top: "-60vh",
-        },
-    };
+    const [scrolled, setScrolled] = useState(false);
 
-    const menuItemsVariants = {
-        open: {
-            transition: { staggerChildren: 0.07, delayChildren: 0 },
-        },
-        closed: {
-            transition: { staggerChildren: 0.05, staggerDirection: -1 },
-        },
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 100) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
 
-    const menuItemVariants = {
-        open: {
-            y: 0,
-            opacity: 1,
-        },
-        closed: {
-            y: 50,
-            opacity: 0,
-        },
-    };
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <div className="sticky top-0 z-30 font-rubik">
-            <div className="relative flex h-[80px] items-center justify-between gap-5 p-[1rem] px-0">
-                <div className="ml-5 flex h-[40px] justify-center pl-5">
-                    <img src={logo} alt="logo" />
-                </div>
+        <div
+            className={`fixed top-0 z-20 flex w-full items-center justify-center font-rubik ${
+                scrolled ? "bg-black" : "bg-transparent"
+            }`}
+        >
+            <div className="flex h-[60px] w-5/6 items-center justify-between lg:justify-center">
+                <HashLink smooth to={"#home"}>
+                    <div className="flex h-[35px] justify-center pl-3">
+                        <motion.img
+                            whileFocus={{
+                                scale: 1.1,
+                            }}
+                            whileTap={{
+                                scale: 0.9,
+                            }}
+                            src={logo}
+                            alt="logo"
+                        />
+                    </div>
+                </HashLink>
 
-                <div className="mr-10 hidden py-1 md:flex">
+                <div className="mr-10 hidden py-1 lg:flex">
                     <ul className="justify-between md:flex">
-                        {links.map((link) => {
+                        {sections.map((section) => {
                             return (
                                 <motion.li
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
-                                    key={link.id}
+                                    key={section.id}
                                 >
                                     <HashLink
                                         smooth
-                                        to={link.link}
-                                        key={link.id}
-                                        className="mx-3 my-1.5 uppercase text-white"
+                                        to={section.link}
+                                        key={section.id}
+                                        className={`mx-3 my-1.5 uppercase ${
+                                            props.activeSection === section.name
+                                                ? "text-[#EAA79C]"
+                                                : "text-white"
+                                        }`}
                                     >
-                                        {link.name}
+                                        {section.name}
                                     </HashLink>
                                 </motion.li>
                             );
                         })}
+                        <a
+                            className="mx-3 cursor-pointer text-white"
+                            href={"/[Chi Tam Nguyen] Resume.pdf"}
+                            download={"[Chi Tam Nguyen] Resume.pdf"}
+                        >
+                            RESUME
+                        </a>
                     </ul>
                 </div>
 
                 <motion.div
                     animate={open ? "open" : "closed"}
                     onClick={() => toggleOpen()}
-                    className="mr-4 flex md:hidden"
+                    className="z-50 mr-4 flex lg:hidden"
                 >
                     <button>
                         <svg width="23" height="23" viewBox="0 0 23 23">
@@ -103,29 +125,46 @@ const NavBar = (props: NavBarProps) => {
                 variants={menuVariants}
                 initial={false}
                 animate={open ? "opened" : "closed"}
-                className="fixed flex h-[60vh] w-full items-center justify-center bg-pink-700 px-10 md:hidden"
+                className="fixed flex h-[50vh] w-full items-center justify-center bg-[#212529] px-10 md:hidden"
             >
                 <motion.ul
                     variants={menuItemsVariants}
                     initial={false}
                     animate={open ? "open" : "closed"}
-                    className="mt-[50px] flex w-full list-none flex-col items-center justify-center gap-3 bg-orange-400"
+                    className="mt-[10px] flex w-full list-none flex-col items-center justify-center gap-3"
                 >
-                    {links.map((link) => {
+                    {sections.map((section) => {
                         return (
                             <motion.li
-                                key={link.id}
+                                key={section.id}
                                 variants={menuItemVariants}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="mx-3 block w-full rounded-md p-1 text-center uppercase hover:bg-blue-500"
                             >
-                                <HashLink smooth to={link.link} key={link.id}>
-                                    {link.name}
+                                <HashLink
+                                    smooth
+                                    to={section.link}
+                                    key={section.id}
+                                    className={`mx-3 my-1.5 uppercase ${
+                                        props.activeSection === section.name
+                                            ? "text-[#EAA79C]"
+                                            : "text-white"
+                                    }`}
+                                    onClick={() => toggleOpen()}
+                                >
+                                    {section.name}
                                 </HashLink>
                             </motion.li>
                         );
                     })}
+                    <a
+                        className="mx-3 cursor-pointer text-white"
+                        href={"/[Chi Tam Nguyen] Resume.pdf"}
+                        download={"[Chi Tam Nguyen] Resume.pdf"}
+                    >
+                        RESUME
+                    </a>
                 </motion.ul>
             </motion.nav>
         </div>

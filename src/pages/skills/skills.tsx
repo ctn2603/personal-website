@@ -1,22 +1,29 @@
-import Slide from "./../../components/slide/slide";
+import { domains } from "../../constants/domains";
+import Domain from "../../components/domain/domain";
 
-interface SkillsProps {}
+interface SkillProps {}
 
-const Skills = (props: SkillsProps) => {
-  return (
-    <section
-      id="skills"
-      className="flex h-[800px] w-full items-center justify-center bg-yellow-500"
-    >
-      <Slide>
-        <h1>Section One</h1>
-      </Slide>
-      <Slide delay={0.3}>
-        <p>Hey! I am the first section</p>
-        <a href="#section2">Scroll to 2</a>
-      </Slide>
-    </section>
-  );
+const Skills = (props: SkillProps) => {
+    return (
+        <div className="px-5">
+            <div className="flex h-[100px] items-center justify-center text-5xl text-white">
+                Skills
+            </div>
+
+            <div className="flex justify-center flex-wrap">
+                {domains.map((domain) => {
+                    return (
+                        <Domain
+                            key={domain.domainId}
+                            domainName={domain.domainName}
+                            techs={domain.techs}
+                            className="my-3"
+                        />
+                    );
+                })}
+            </div>
+        </div>
+    );
 };
 
 export default Skills;
