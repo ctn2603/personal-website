@@ -12,7 +12,7 @@ export const menuItemsVariants = {
         transition: { staggerChildren: 0.07, delayChildren: 0 },
     },
     closed: {
-        transition: { staggerChildren: 0.05, staggerDirection: -1 },
+        transition: { staggerChildren: 0.07, staggerDirection: -1 },
     },
 };
 

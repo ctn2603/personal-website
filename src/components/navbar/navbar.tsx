@@ -40,9 +40,20 @@ const NavBar = (props: NavBarProps) => {
             }`}
         >
             <div className="flex h-[60px] w-5/6 items-center justify-between lg:justify-center">
-                <div className="flex h-[35px] justify-center pl-3">
-                    <img src={logo} alt="logo" />
-                </div>
+                <HashLink smooth to={"#home"}>
+                    <div className="flex h-[35px] justify-center pl-3">
+                        <motion.img
+                            whileFocus={{
+                                scale: 1.1,
+                            }}
+                            whileTap={{
+                                scale: 0.9,
+                            }}
+                            src={logo}
+                            alt="logo"
+                        />
+                    </div>
+                </HashLink>
 
                 <div className="mr-10 hidden py-1 lg:flex">
                     <ul className="justify-between md:flex">
@@ -81,7 +92,7 @@ const NavBar = (props: NavBarProps) => {
                 <motion.div
                     animate={open ? "open" : "closed"}
                     onClick={() => toggleOpen()}
-                    className="mr-4 flex lg:hidden"
+                    className="z-50 mr-4 flex lg:hidden"
                 >
                     <button>
                         <svg width="23" height="23" viewBox="0 0 23 23">
@@ -114,13 +125,13 @@ const NavBar = (props: NavBarProps) => {
                 variants={menuVariants}
                 initial={false}
                 animate={open ? "opened" : "closed"}
-                className="fixed flex h-[60vh] w-full items-center justify-center bg-pink-700 px-10 md:hidden"
+                className="fixed flex h-[50vh] w-full items-center justify-center bg-[#212529] px-10 md:hidden"
             >
                 <motion.ul
                     variants={menuItemsVariants}
                     initial={false}
                     animate={open ? "open" : "closed"}
-                    className="mt-[50px] flex w-full list-none flex-col items-center justify-center gap-3 bg-orange-400"
+                    className="mt-[10px] flex w-full list-none flex-col items-center justify-center gap-3"
                 >
                     {sections.map((section) => {
                         return (
@@ -140,12 +151,20 @@ const NavBar = (props: NavBarProps) => {
                                             ? "text-[#EAA79C]"
                                             : "text-white"
                                     }`}
+                                    onClick={() => toggleOpen()}
                                 >
                                     {section.name}
                                 </HashLink>
                             </motion.li>
                         );
                     })}
+                    <a
+                        className="mx-3 cursor-pointer text-white"
+                        href={"/[Chi Tam Nguyen] Resume.pdf"}
+                        download={"[Chi Tam Nguyen] Resume.pdf"}
+                    >
+                        RESUME
+                    </a>
                 </motion.ul>
             </motion.nav>
         </div>
