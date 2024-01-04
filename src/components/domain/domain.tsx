@@ -18,7 +18,7 @@ const Domain = (props: DomainProps) => {
             rounded-3xl border border-gray-100 bg-opacity-10 bg-clip-padding backdrop-blur-sm backdrop-filter sm:w-3/4 sm:flex-row`}
         >
             <div className="flex w-[150px] flex-shrink-0 items-center justify-center rounded-bl-xl rounded-tl-xl py-2">
-                <p className="text-center text-white">{props.domainName}</p>
+                <p className="text-center text-[#EAA79C]">{props.domainName}</p>
             </div>
             <motion.div
                 className="px-auto flex grow flex-wrap items-start justify-center sm:justify-start"

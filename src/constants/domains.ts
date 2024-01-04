@@ -59,12 +59,16 @@ export const domains: Domain[] = [
         domainName: "Frameworks",
         techs: [
             {
-                techId: "reactjs",
-                techName: "ReactJS",
+                techId: "react",
+                techName: "React",
             },
             {
-                techId: "nodejs",
-                techName: "NodeJS",
+                techId: "node.js",
+                techName: "Node.js",
+            },
+            {
+                techId: "express.js",
+                techName: "Express.js",
             },
             {
                 techId: "django",
@@ -81,16 +85,16 @@ export const domains: Domain[] = [
         domainName: "Databases",
         techs: [
             {
-                techId: "firestore",
-                techName: "Firestore",
+                techId: "mysql",
+                techName: "MySQL",
             },
             {
                 techId: "mongodb",
                 techName: "MongoDB",
             },
             {
-                techId: "mysql",
-                techName: "MySQL",
+                techId: "firestore",
+                techName: "Firestore",
             },
         ],
     },
@@ -117,6 +121,58 @@ export const domains: Domain[] = [
             {
                 techId: "code pipeline",
                 techName: "Code Pipeline",
+            },
+        ],
+    },
+    {
+        domainId: "containerization",
+        domainName: "Containerization",
+        techs: [
+            {
+                techId: "docker",
+                techName: "Docker",
+            },
+        ],
+    },
+    {
+        domainId: "cicd",
+        domainName: "CI/CD",
+        techs: [
+            {
+                techId: "aws codepipeline",
+                techName: "AWS Code Pipeline",
+            },
+        ],
+    },
+    {
+        domainId: "development methodologies",
+        domainName: "Development Methodologies",
+        techs: [
+            {
+                techId: "agile",
+                techName: "Agile",
+            },
+            {
+                techId: "waterfall",
+                techName: "Waterfall",
+            },
+        ],
+    },
+    {
+        domainId: "os",
+        domainName: "OS",
+        techs: [
+            {
+                techId: "windows",
+                techName: "Windows",
+            },
+            {
+                techId: "linux",
+                techName: "Linux",
+            },
+            {
+                techId: "macos",
+                techName: "MacOS",
             },
         ],
     },
@@ -150,7 +206,7 @@ export const domains: Domain[] = [
             },
             {
                 techId: "vs code",
-                techName: "Vs Code",
+                techName: "VS Code",
             },
             {
                 techId: "intellij",
@@ -165,12 +221,16 @@ export const domains: Domain[] = [
                 techName: "Postman",
             },
             {
-                techId: "ms office",
-                techName: "MS Office",
-            },
-            {
                 techId: "chrome developer tools",
                 techName: "Chrome Developer Tools",
+            },
+            {
+                techId: "docker desktop",
+                techName: "Docker Desktops",
+            },
+            {
+                techId: "ms office",
+                techName: "MS Office",
             },
         ],
     },

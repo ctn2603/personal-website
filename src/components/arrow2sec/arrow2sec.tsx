@@ -25,7 +25,7 @@ const Arrow2Sec = (props: Arrow2SecProps) => {
                     animate="end"
                     transition={{
                         repeat: Infinity,
-                        duration: 2,
+                        duration: 3,
                     }}
                     src={Arrow}
                     alt="More"
