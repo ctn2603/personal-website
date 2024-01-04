@@ -10,7 +10,7 @@ const About = (props: AboutProps) => {
                 About me
             </div>
             <div className="flex w-full flex-col items-center justify-center gap-10 md:w-3/4 md:flex-row">
-                <div className="flex w-[150px] items-center justify-center sm:w-[250px]">
+                <div className="flex h-2 w-[150px] items-center justify-center sm:w-[250px]">
                     <img src={profile} alt="logo" />
                 </div>
                 <motion.div

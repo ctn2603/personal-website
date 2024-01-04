@@ -86,7 +86,7 @@ const NavBar = (props: NavBarProps) => {
                         >
                             <button
                                 type="submit"
-                                className="shadow-primary ml-10 rounded-xl border border-gray-300 bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f]"
+                                className="shadow-primary ml-10 rounded-xl bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f]"
                             >
                                 RESUME
                             </button>
@@ -170,7 +170,7 @@ const NavBar = (props: NavBarProps) => {
                     >
                         <button
                             type="submit"
-                            className="shadow-primary ml-0 rounded-xl border border-gray-300 bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f] lg:ml-10"
+                            className="shadow-primary ml-0 rounded-xl bg-[#26CD71] px-4 font-bold shadow-md outline-none hover:bg-[#86cfa6] active:bg-[#05ad4f] lg:ml-10"
                         >
                             RESUME
                         </button>
