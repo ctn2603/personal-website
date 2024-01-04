@@ -14,6 +14,7 @@ WORKDIR /usr/src/app
 
 # Speed up build process by checking if changes happen at this layer
 COPY package.json ./
+COPY yarn.lock ./
 
 # Install all dependencies
 RUN yarn install
