@@ -28,7 +28,7 @@ export const projects: Project[] = [
         id: "posto",
         name: "Posto",
         thumbnail: Skills,
-        description: "A full-stack and cross-platform social media app designed for mobile, inspiring discoveries, learning, fostering cultural exchanges, and encouraging meaningful communications among users.",
+        description: "A full-stack and cross-platform social media app designed for mobile, inspiring discoveries, learning, fostering cultural exchanges, and encouraging meaningful communications.",
         tags: ["Dart", "Flutter", "Typescript", "Firebase", "Node.js", "ExpressJS", "Restful API", "Android", "iOS"],
         repo: "https://github.com/ctn2603/Posto.git"
     },

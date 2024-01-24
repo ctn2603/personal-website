@@ -7,7 +7,7 @@ interface ProjectsProps {}
 
 const Projects = (props: ProjectsProps) => {
     return (
-        <>
+        <div className="flex flex-col items-center justify-center">
             <div className="flex h-[100px] items-center text-5xl text-black">
                 Projects
             </div>
@@ -19,13 +19,13 @@ const Projects = (props: ProjectsProps) => {
                 transition={{
                     staggerChildren: 0.2,
                 }}
-                className="flex w-5/6 flex-col flex-wrap sm:w-3/4 sm:flex-row"
+                className="flex flex-col flex-wrap justify-center sm:w-3/4 sm:flex-row"
             >
                 {projects.map((project) => {
                     return <ProjectCard key={project.id} {...project} />;
                 })}
             </motion.div>
-        </>
+        </div>
     );
 };
 
