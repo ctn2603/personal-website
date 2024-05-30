@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import Arrow2Sec from "../../components/arrow2sec/arrow2sec";
-import Computer from "./../../assets/animations/computer.json";
+import PersonalPhoto from "../../assets/images/personal_photo.png";
 
 interface HomeProps {}
 
@@ -22,7 +22,7 @@ const Home = (props: HomeProps) => {
                 <Arrow2Sec className="mt-10 hidden w-full items-end justify-center lg:flex" />
             </div>
             <div className="mt-10 flex w-full items-center justify-center sm:mt-0 lg:w-1/2">
-                <Lottie animationData={Computer} />
+                <img src={PersonalPhoto} alt="logo" />
             </div>
             <Arrow2Sec className="flex w-full items-end justify-center lg:hidden" />
         </div>
