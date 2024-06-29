@@ -29,7 +29,7 @@ const Arrow2Sec = (props: Arrow2SecProps) => {
                     }}
                     src={Arrow}
                     alt="More"
-                    className="h-[70px] text-red-500"
+                    className="h-[50px] w-[50px] text-red-500"
                 />
             </HashLink>
         </div>
