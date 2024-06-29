@@ -3,8 +3,6 @@ import {
     VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import Education from "../../assets/icons/education.png";
-import Work from "../../assets/icons/work.png";
 import { educationTimelines, workTimelines } from "../../constants/timelines";
 
 interface TimelineProps {}
@@ -40,9 +38,9 @@ const Timeline = (props: TimelineProps) => {
                             icon={
                                 <div className="flex h-full w-full items-center justify-center">
                                     <img
-                                        src={Work}
+                                        src={timeline.logo}
                                         alt={timeline.company}
-                                        className="h-[60%] w-[60%] object-contain"
+                                        className="h-[70%] w-[70%] object-contain"
                                     />
                                 </div>
                             }
@@ -74,7 +72,7 @@ const Timeline = (props: TimelineProps) => {
                 })}
             </VerticalTimeline>
 
-            <div className="justify-center items-center mt-[100px] flex h-[100px] text-4xl text-white">
+            <div className="mt-[100px] flex h-[100px] items-center justify-center text-4xl text-white">
                 Education
             </div>
             <VerticalTimeline>
@@ -101,9 +99,9 @@ const Timeline = (props: TimelineProps) => {
                             icon={
                                 <div className="flex h-full w-full items-center justify-center">
                                     <img
-                                        src={Education}
+                                        src={timeline.logo}
                                         alt={timeline.school}
-                                        className="h-[60%] w-[60%] object-contain"
+                                        className="h-[70%] w-[70%] object-contain"
                                     />
                                 </div>
                             }
